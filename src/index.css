@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Poppins', sans-serif;
+    --font-serif: 'Source Serif 4', serif;
+
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 153 55% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 50%;
+
+    --accent: 153 55% 21%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 153 55% 21%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 80%;
+    --sidebar-primary: 153 55% 21%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 153 55% 21%;
+
+    /* Custom tokens */
+    --surface-elevated: 0 0% 12%;
+    --text-primary: 0 0% 100%;
+    --text-secondary: 0 0% 80%;
+    --text-tertiary: 0 0% 60%;
+    --text-muted: 0 0% 50%;
+    --success: 153 55% 21%;
+    --warning: 40 90% 50%;
+    --info: 210 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+
+  h1 em, h2 em, h3 em,
+  h1 i, h2 i, h3 i,
+  h1 .italic, h2 .italic, h3 .italic {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card border border-border rounded-lg backdrop-blur-sm;
+  }
+  .text-hierarchy-1 {
+    color: hsl(var(--text-primary));
+  }
+  .text-hierarchy-2 {
+    color: hsl(var(--text-secondary));
+  }
+  .text-hierarchy-3 {
+    color: hsl(var(--text-tertiary));
+  }
+  .text-hierarchy-4 {
+    color: hsl(var(--text-muted));
+  }
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+  }
+}
